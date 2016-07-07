@@ -13,9 +13,9 @@ $db['master'] = array(
     'persistent' => false, //MySQL长连接
     'use_proxy'  => true,  //启动读写分离Proxy
     'slaves'     => array(
-        array('host' => '127.0.0.1', 'port' => '3307', 'weight' => 100,),
-        array('host' => '127.0.0.1', 'port' => '3308', 'weight' => 99,),
-        array('host' => '127.0.0.1', 'port' => '3309', 'weight' => 98,),
+        array('host' => '127.0.0.1', 'port' => '3306', 'weight' => 100,),
+        array('host' => '127.0.0.1', 'port' => '3306', 'weight' => 99,),
+        array('host' => '127.0.0.1', 'port' => '3306', 'weight' => 98,),
     ),
 );
 

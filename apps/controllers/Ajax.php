@@ -10,4 +10,10 @@ class Ajax extends Swoole\Controller
     {
         return array('json' => 'swoole');
     }
+
+    function get_db(){
+        $object = model('ajax');
+        $return = $object->get_id(1);
+        return $return;
+    }
 }
