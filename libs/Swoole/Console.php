@@ -54,7 +54,7 @@ class Console
     {
         if (function_exists('cli_set_process_title'))
         {
-            cli_set_process_title($name);
+            @cli_set_process_title($name);
         }
         else
         {

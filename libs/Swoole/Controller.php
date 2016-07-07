@@ -150,7 +150,7 @@ class Controller extends Object
         $included_files = get_included_files();
 
         // 系统默认显示信息
-        $_trace['请求脚本'] = $_SERVER['SCRIPT_NAME'];
+        $_trace['请求脚本'] = @$_SERVER['SCRIPT_NAME'];
         $_trace['请求方法'] = $this->swoole->env['mvc']['controller'].'/'.$this->swoole->env['mvc']['view'];
         $_trace['USER_AGENT'] = $_SERVER['HTTP_USER_AGENT'];
         $_trace['HTTP版本'] = $_SERVER['SERVER_PROTOCOL'];
