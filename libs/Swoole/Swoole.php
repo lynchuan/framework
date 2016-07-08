@@ -99,7 +99,7 @@ class Swoole
         'codb' => true,
     );
 
-    static $default_controller = array('controller' => 'page', 'view' => 'index');
+    static $default_controller = array('controller' => 'error', 'view' => 'index');
 
     static $charset = 'utf-8';
     static $debug = false;
@@ -173,6 +173,7 @@ class Swoole
 
         $this->load = new Swoole\Loader($this);
         $this->model = new Swoole\ModelLoader($this);
+        $this->plugin = new Swoole\PluginLoader($this);
         $this->config = new Swoole\Config;
         $this->config->setPath(self::$app_path . '/configs');
 

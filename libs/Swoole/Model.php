@@ -256,6 +256,7 @@ class Model
 	 */
 	public final function getStatus()
 	{
+		return "show table status from ".DBNAME." where name='{$this->table}'";
 		return $this->db->query("show table status from ".DBNAME." where name='{$this->table}'")->fetch();
 	}
 	/**

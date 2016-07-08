@@ -62,7 +62,7 @@ class ModelLoader
             {
                 throw new Error("The model [<b>$model_name</b>] does not exist.");
             }
-            $model_class = '\\App\\Model\\' . $model_name;
+            $model_class = '\\App\\Model\\' . str_replace('/','\\',$model_name);
             require_once $model_file;
             $this->_models[$db_key][$model_name] = new $model_class($this->swoole, $db_key);
             return $this->_models[$db_key][$model_name];

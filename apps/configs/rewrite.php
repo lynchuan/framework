@@ -7,7 +7,7 @@ $array[] = array(
     /**
      * 对应的控制器和视图
      */
-    'mvc'  => array('controller' => 'ajax', 'view' => 'test'),
+    'mvc'  => array('controller' => 'error', 'view' => 'index'),
     /**
      * 将regx中的正则子表达式的值填充到$_GET参数中
      * 如/hello/134.html，那么就是 $_GET['app'] = hello, $_GET['id'] = 134
