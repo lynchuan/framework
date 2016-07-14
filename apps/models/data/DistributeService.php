@@ -37,12 +37,12 @@ class DistributeService extends Swoole\Model
         $db_name = 'dbMtaOffline_'. str_pad($db_suffix,3,"0",0) ;
 
         //加载指定数据库，构造连接
-        global $php;
         if($db_suffix > 127 && $db_suffix <=255) {
-            $this->config = $php->config['db']['offline_left'];
+            $this->config = \Swoole::getInstance()->config['db']['offline_left'];
         } else {
-            $this->config = $php->config['db']['offline'];
+            $this->config = \Swoole::getInstance()->config['db']['offline'];
         }
+
         $this->config['name'] = $db_name;
         $this->db = new Swoole\Database($this->config);
         $this->db->connect();

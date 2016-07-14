@@ -45,7 +45,7 @@ class Data extends Swoole\Controller
     public function __construct(\Swoole $swoole)
     {
         parent::__construct($swoole);
-        //TODO more methods
+        //TODO more methods,用spl_autoload_register实现
         $this->obj = $this->PubFunc('factory');
         $this->setting = $this->return_code + $this->config['errcode']['err_code'];
     }
@@ -111,6 +111,7 @@ class Data extends Swoole\Controller
             if($val=='') {continue;}
             $value = $object->get_key_data_by_msgId($accessids[$key],$pushids[$key]);
 
+            //$object->get_id($accessids[$key]);
             if(substr($accessids[$key],0,2) == self::PRE_ANDROID) {
                 $value['push'] = $value['push_online'];
             }
@@ -135,6 +136,7 @@ class Data extends Swoole\Controller
 
             $data[$pushids[$key]] = $value;
         }
+        $data = array();
         return $this->_output_data(0,$data);
     }
 

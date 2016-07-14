@@ -43,4 +43,14 @@ class AppData extends Swoole\Model
 
         return $result;
     }
+
+    /*public function get_id($app_id)
+    {
+        $sql = "select * from user_login";
+        model('data/DistributeService');
+        $model = new DistributeService($this->swoole,'offline');
+        $result = $model->fetch_array($app_id,$sql);
+
+        return $result;
+    }*/
 }
